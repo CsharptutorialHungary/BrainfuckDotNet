@@ -19,13 +19,9 @@ namespace BrainFuckDotNet.Parsing
             int closed = 0;
             List<IInstruction> result = Tokenize(program, ref i, ref opened, ref closed);
 
-            if (opened < closed)
+            if (opened > closed)
             {
-                throw new BrainFuckException("Extra loop closing");
-            }
-            else if (opened > closed)
-            {
-                throw new BrainFuckException("Unclosed loop");
+                throw ExceptionFactory.Create(Error.ErrorUnclosedLoop, i);
             }
 
             return result;
@@ -54,7 +50,7 @@ namespace BrainFuckDotNet.Parsing
                     ++closed;
 
                     if (closed > opened)
-                        throw new BrainFuckException("Extra loop closing");
+                        throw ExceptionFactory.Create(Error.ErrorTooManyLoopClose, i);
 
                     return result;
                 }
