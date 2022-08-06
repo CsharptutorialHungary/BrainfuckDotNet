@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 using BrainFuckDotnet.Runtime;
 
 using BrainFuckDotNet.Domain;
@@ -29,7 +24,7 @@ namespace BrainFuckDotNet.Parsing
 
         private static List<IInstruction> Tokenize(string program, ref int i, ref int opened, ref int closed)
         {
-            List<IInstruction> result = new List<IInstruction>();
+            List<IInstruction> result = new();
             while (i < program.Length)
             {
                 char c = program[i];

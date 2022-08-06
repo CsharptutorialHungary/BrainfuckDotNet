@@ -1,6 +1,5 @@
 ﻿namespace BrainFuckDotnet.Runtime
 {
-
     public static class ExceptionFactory
     {
         public static BrainFuckException Create(Error error, params object[] args)
