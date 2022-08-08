@@ -8,11 +8,34 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Properties\Template.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <InternalsVisibleTo Include="BrainFuckDotNet.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Properties\Template.cs" />
   </ItemGroup>
   
   <ItemGroup>
     <ProjectReference Include="..\BrainFuckDotnet.Runtime\BrainFuckDotnet.Runtime.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

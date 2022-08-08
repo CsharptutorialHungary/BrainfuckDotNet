@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Text;
 
 namespace BrainFuckDotNet.Domain
 {
@@ -56,6 +57,19 @@ namespace BrainFuckDotNet.Domain
                 hash.Add(Instructions[i]);
             }
             return hash.ToHashCode();
+        }
+
+        public string ToCharp(int indentation)
+        {
+            StringBuilder result = new StringBuilder(1024);
+            foreach (var instruction in this)
+            {
+                if (instruction is Loop)
+                    result.Append(instruction.ToCharp(indentation+1));
+                else
+                    result.Append(instruction.ToCharp(indentation));
+            }
+            return result.ToString();
         }
     }
 }

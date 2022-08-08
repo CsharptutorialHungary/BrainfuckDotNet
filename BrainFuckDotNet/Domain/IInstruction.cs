@@ -2,5 +2,6 @@
 {
     internal interface IInstruction
     {
+        string ToCharp(int indentation);
     }
 }
