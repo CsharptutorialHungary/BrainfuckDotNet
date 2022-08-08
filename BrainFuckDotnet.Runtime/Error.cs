@@ -4,5 +4,6 @@
     {
         ErrorUnclosedLoop,
         ErrorTooManyLoopClose,
+        ErrorRuntimeError,
     }
 }

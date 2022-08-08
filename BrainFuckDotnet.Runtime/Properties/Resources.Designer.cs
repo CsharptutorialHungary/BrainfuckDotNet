@@ -61,6 +61,15 @@ namespace BrainFuckDotnet.Runtime.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Runtime error: {0}.
+        /// </summary>
+        internal static string ErrorRuntimeError {
+            get {
+                return ResourceManager.GetString("ErrorRuntimeError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Extra loop closing at: {0}.
         /// </summary>
         internal static string ErrorTooManyLoopClose {
