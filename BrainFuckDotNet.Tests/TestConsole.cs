@@ -2,7 +2,7 @@
 
 namespace BrainFuckDotNet.Tests
 {
-    internal class TestConsole : IConsole
+    internal class TestConsole : LatinConsole
     {
         private readonly StringBuilder _result;
 
@@ -13,12 +13,12 @@ namespace BrainFuckDotNet.Tests
 
         public int WriteCount { get; private set; }
 
-        public byte Read()
+        public override byte Read()
         {
             return 0;
         }
 
-        public void Write(byte value)
+        public override void Write(byte value)
         {
             _result.Append((char)value);
             WriteCount++;

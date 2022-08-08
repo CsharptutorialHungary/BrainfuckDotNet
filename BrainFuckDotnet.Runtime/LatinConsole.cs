@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace BrainFuckDotnet.Runtime
 {
-    //TODO: Fix later
     public abstract class LatinConsole : IConsole
     {
-        protected readonly string _charTable;
+        protected readonly char[] _charTable;
 
         protected LatinConsole()
         {
-            StringBuilder chars = new(256);
-            for (int i = 0; i < 255; i++)
+            byte[] table = new byte[255];
+            for (int i = 0; i<255; i++)
             {
-                chars.Append(Encoding.Latin1.GetString(new byte[] { (byte)i }));
+                table[i] = (byte)i;
             }
-            _charTable = chars.ToString();
+
+            _charTable = Encoding.Latin1.GetChars(table);
         }
 
         public abstract byte Read();
