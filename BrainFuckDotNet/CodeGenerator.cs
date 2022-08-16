@@ -23,7 +23,7 @@ namespace BrainFuckDotNet
 
             final.Replace("%Generated%", generated.ToString());
             
-            return generated.ToString();
+            return final.ToString();
         }
     }
 }

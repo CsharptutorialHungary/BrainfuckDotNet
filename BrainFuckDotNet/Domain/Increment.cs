@@ -10,9 +10,9 @@
         public string ToCharp(int indentation)
         {
             if (Value < 0)
-                return "mem[i]--".Indent(indentation);
+                return "mem[i]--;".Indent(indentation);
             else if (Value > 0)
-                return "mem[i]++".Indent(indentation);
+                return "mem[i]++;".Indent(indentation);
             else
                 return string.Empty;
         }

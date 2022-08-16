@@ -7,7 +7,7 @@
     {
         public string ToCharp(int indentation)
         {
-            return "console.Write(mem[i])".Indent(indentation);
+            return "Console.Write((char)mem[i]);".Indent(indentation);
         }
     }
 }

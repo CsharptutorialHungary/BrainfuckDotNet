@@ -62,13 +62,16 @@ namespace BrainFuckDotNet.Domain
         public string ToCharp(int indentation)
         {
             StringBuilder result = new StringBuilder(1024);
+            result.AppendLine("while (mem[i] != 0)");
+            result.AppendLine("{");
             foreach (var instruction in this)
             {
                 if (instruction is Loop)
-                    result.Append(instruction.ToCharp(indentation+1));
+                    result.Append(instruction.ToCharp(indentation+2));
                 else
-                    result.Append(instruction.ToCharp(indentation));
+                    result.Append(instruction.ToCharp(indentation+1));
             }
+            result.AppendLine("}");
             return result.ToString();
         }
     }
