@@ -4,19 +4,21 @@ using BrainFuckDotNet.Domain;
 
 namespace BrainFuckDotNet
 {
-    internal class CodeGenerator
+    internal static class CodeGenerator
     {
-        public string Generate(IList<IInstruction> instructions, string nameSpace, string className)
+        private const int DefaultIndent = 4;
+
+        public static string Generate(IList<IInstruction> instructions, string nameSpace, string className)
         {
             StringBuilder final = new StringBuilder(Properties.Resources.Template);
             final.Replace("%NameSpaceName%", nameSpace);
             final.Replace("%ClassName%", className);
 
-            StringBuilder generated = new StringBuilder();
+            StringBuilder generated = new();
 
             foreach (var instruction in instructions)
             {
-                generated.Append(instruction.ToCharp(4));
+                generated.Append(instruction.ToCharp(DefaultIndent));
             }
 
             final.Replace("%Generated%", generated.ToString());
