@@ -1,6 +1,6 @@
 ﻿namespace BrainFuckDotnet.Runtime
 {
-    public class SytemConsole : LatinConsole
+    public class SystemConsole : LatinConsole
     {
         public override byte Read()
         {

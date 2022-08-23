@@ -70,7 +70,7 @@ namespace BrainFuckDotNet
             yield return SyntaxFactory.ParseSyntaxTree("using BrainFuckProgram;\r\n"
                                                       + "using BrainFuckDotnet.Runtime;\r\n"
                                                       + "var p = new BfCode();\r\n"
-                                                      + "p.RunBrainFuck(new SytemConsole());", 
+                                                      + "p.RunBrainFuck(new SystemConsole());", 
                                                       CSharpParseOptions.Default.WithLanguageVersion(LanguageVersion.Latest));
         }
 
