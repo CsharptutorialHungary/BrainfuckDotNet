@@ -66,7 +66,12 @@ namespace BrainFuckDotNet
             string bfCode = CodeGenerator.Generate(instructions, "BrainFuckProgram", "BfCode");
 
             yield return SyntaxFactory.ParseSyntaxTree(bfCode, CSharpParseOptions.Default.WithLanguageVersion(LanguageVersion.Latest));
-            yield return SyntaxFactory.ParseSyntaxTree("using BrainFuckProgram\r\n;var p = new BfCode();\r\np.RunBrainFuck();", CSharpParseOptions.Default.WithLanguageVersion(LanguageVersion.Latest));
+            
+            yield return SyntaxFactory.ParseSyntaxTree("using BrainFuckProgram;\r\n"
+                                                      + "using BrainFuckDotnet.Runtime;\r\n"
+                                                      + "var p = new BfCode();\r\n"
+                                                      + "p.RunBrainFuck(new SytemConsole());", 
+                                                      CSharpParseOptions.Default.WithLanguageVersion(LanguageVersion.Latest));
         }
 
         public void Compile(IList<IInstruction> instructions, string file)

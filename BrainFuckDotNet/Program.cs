@@ -1,4 +1,5 @@
-﻿using BrainFuckDotNet;
+﻿//TODO: https://docs.microsoft.com/en-us/dotnet/standard/commandline/
+using BrainFuckDotNet;
 using BrainFuckDotNet.Parsing;
 
 if (args.Length != 2)

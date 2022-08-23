@@ -62,8 +62,8 @@ namespace BrainFuckDotNet.Domain
         public string ToCharp(int indentation)
         {
             StringBuilder result = new StringBuilder(1024);
-            result.AppendLine("while (mem[i] != 0)");
-            result.AppendLine("{");
+            result.IndentedAdd("while (mem[i] != 0)", indentation);
+            result.IndentedAdd("{", indentation);
             foreach (var instruction in this)
             {
                 if (instruction is Loop)
@@ -71,7 +71,7 @@ namespace BrainFuckDotNet.Domain
                 else
                     result.Append(instruction.ToCharp(indentation+1));
             }
-            result.AppendLine("}");
+            result.IndentedAdd("}", indentation);
             return result.ToString();
         }
     }

@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrainFuckDotNet.Tests", "Br
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrainFuckDotNet", "BrainFuckDotNet\BrainFuckDotNet.csproj", "{36977370-26F2-4712-8E52-257410FAE360}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrainFuckDotnet.Runtime", "BrainFuckDotnet.Runtime\BrainFuckDotnet.Runtime.csproj", "{65F061C3-095F-4AFE-ADFF-64A5D37187DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrainFuckDotnet.Runtime", "BrainFuckDotnet.Runtime\BrainFuckDotnet.Runtime.csproj", "{65F061C3-095F-4AFE-ADFF-64A5D37187DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
