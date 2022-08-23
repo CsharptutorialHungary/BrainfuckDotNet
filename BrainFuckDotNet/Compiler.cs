@@ -90,6 +90,8 @@ namespace BrainFuckDotNet
                     Console.WriteLine(details);
                 }
             }
+
+            RuntimeConfigManager.CreateConfigJson(file);
         }
     }
 }
