@@ -3,7 +3,7 @@
     /// <summary>
     /// +, -
     /// </summary>
-    internal record struct Increment : IInstruction
+    internal record struct Increment : IInstruction, IValue
     {
         public int Value { get; set; }
 

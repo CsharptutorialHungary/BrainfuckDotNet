@@ -11,7 +11,7 @@ namespace BrainFuckDotNet.Tests
             _result = new(256);
         }
 
-        public int WriteCount { get; private set; }
+        public int WriteCount { get; set; }
 
         public override byte Read()
         {

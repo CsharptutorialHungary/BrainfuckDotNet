@@ -74,7 +74,7 @@ void OnRun(string input)
         var console = new SystemConsole();
         var interpreter = new Interpreter(console);
 
-        interpreter.Execute(File.ReadAllText(input));
+        interpreter.Execute(File.ReadAllText(input), true);
     }
     catch (Exception ex)
     {

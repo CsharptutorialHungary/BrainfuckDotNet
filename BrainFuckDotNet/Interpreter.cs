@@ -27,11 +27,19 @@ namespace BrainFuckDotNet
             Count = 0;
         }
 
-        public void Execute(string program)
+        public void Execute(string program, bool optimize)
         {
             Reset();
             IList<IInstruction> instructions = Tokenizer.Tokenize(program);
-            Execute(instructions);
+            if (optimize)
+            {
+                var optimized = Optimizer.Optimize(instructions);
+                Execute(optimized);
+            }
+            else
+            {
+                Execute(instructions);
+            }
         }
 
         private void Execute(IList<IInstruction> instructions)
@@ -63,6 +71,10 @@ namespace BrainFuckDotNet
                     else if (instruction is Input)
                     {
                         _memory[_memoryPointer] = _console.Read();
+                    }
+                    else if (instruction is ResetCell)
+                    {
+                        _memory[_memoryPointer] = 0;
                     }
                 }
                 catch (Exception ex)

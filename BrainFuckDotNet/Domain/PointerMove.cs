@@ -3,7 +3,7 @@
     /// <summary>
     /// <, >
     /// </summary>
-    internal record struct PointerMove : IInstruction
+    internal record struct PointerMove : IInstruction, IValue
     {
         public int Value { get; set; }
 

@@ -5,5 +5,6 @@
         ErrorUnclosedLoop,
         ErrorTooManyLoopClose,
         ErrorRuntimeError,
+        ErrorOptimize,
     }
 }

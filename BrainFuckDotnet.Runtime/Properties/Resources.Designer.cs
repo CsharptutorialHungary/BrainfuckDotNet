@@ -61,6 +61,15 @@ namespace BrainFuckDotnet.Runtime.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error during optimization of program.
+        /// </summary>
+        internal static string ErrorOptimize {
+            get {
+                return ResourceManager.GetString("ErrorOptimize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Runtime error: {0}.
         /// </summary>
         internal static string ErrorRuntimeError {
